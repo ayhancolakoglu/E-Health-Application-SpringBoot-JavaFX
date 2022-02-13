@@ -1,0 +1,90 @@
+.text-xs {
+    -fx-font-size: 12px;
+}
+
+.text-sm {
+    -fx-font-size: 14px;
+}
+
+.text-base {
+    -fx-font-size: 16px;
+}
+
+.text-lg {
+    -fx-font-size: 18px;
+}
+
+.text-xl {
+    -fx-font-size: 20px;
+}
+
+.text-2xl {
+    -fx-font-size: 24px;
+}
+
+.text-3xl {
+    -fx-font-size: 30px;
+}
+
+.text-4xl {
+    -fx-font-size: 36px;
+}
+
+.text-5xl {
+    -fx-font-size: 48px;
+}
+
+.text-6xl {
+    -fx-font-size: 60px;
+}
+
+.text-7xl {
+    -fx-font-size: 72px;
+}
+
+.text-8xl {
+    -fx-font-size: 96px;
+}
+
+.text-9xl {
+    -fx-font-size: 128px;
+}
+/*
+ * Font Weight
+ */
+
+.font-thin {
+    -fx-font-weight: 100;
+}
+
+.font-extralight {
+    -fx-font-weight: 200;
+}
+
+.font-light {
+    -fx-font-weight: 300;
+}
+
+.font-normal {
+    -fx-font-weight: 400;
+}
+
+.font-medium {
+    -fx-font-weight: 500;
+}
+
+.font-semibold {
+    -fx-font-weight: 600;
+}
+
+.font-bold {
+    -fx-font-weight: 700;
+}
+
+.font-extrabold {
+    -fx-font-weight: 800;
+}
+
+.font-black {
+    -fx-font-weight: 900;
+}

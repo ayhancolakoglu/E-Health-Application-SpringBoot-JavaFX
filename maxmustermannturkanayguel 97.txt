@@ -1,0 +1,9 @@
+Hello Mr/Mrs. Mustermann,
+In the following you can see your appointment information and general information
+Doctor: Dr med. Turkan Ayguel 
+Address: Gebeschusstr. 2 60439 Frankfurt am Main
+Appointment information: 2022-02-20 at 10:30
+Appointment health information: My nose is swollen all day.
+General health information: Cat allergy
+
+

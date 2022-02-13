@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fordsoft.tech.mydesk.controller.SelectionController">
+   <children>
+      <Button fx:id="user" contentDisplay="BOTTOM" layoutX="669.0" layoutY="288.0" mnemonicParsing="false" onAction="#onLoginuser" prefHeight="56.0" prefWidth="183.0" scaleShape="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="68.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/btnpatient.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9fcdf8" height="720.0" stroke="#9fcdf8" strokeType="INSIDE" width="342.0" />
+      <ImageView fitHeight="336.0" fitWidth="342.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.819488525390625" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@../images/erstesBild.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="doctor" contentDisplay="BOTTOM" layoutX="908.0" layoutY="325.0" mnemonicParsing="false" onAction="#onLoginDoctor" prefHeight="105.0" prefWidth="257.0" scaleShape="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnadmin" layoutX="30.0" layoutY="24.0" mnemonicParsing="false" onAction="#onAdmin" text="Admin" />
+      <ImageView fitHeight="314.0" fitWidth="240.0" layoutX="1008.0" layoutY="184.0">
+         <image>
+            <Image url="@../images/standing-14.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="305.0" fitWidth="180.0" layoutX="388.0" layoutY="188.0">
+         <image>
+            <Image url="@../images/standing-11.png" />
+         </image>
+      </ImageView>
+      <Text fill="#1f8dee" layoutX="586.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-HEALTH FFM" wrappingWidth="586.0498046875">
+         <font>
+            <Font size="59.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+.primary-label {
+    -fx-text-fill: #000000;
+}
+
+.secondary-label {
+    -fx-text-fill: #E5E7EB;
+}
+
+.text-field {
+    -fx-background-radius: 10;
+    -fx-pref-width: 480;
+    -fx-pref-height: 60;
+    -fx-min-width: 480;
+    -fx-min-height: 60;
+    -fx-max-width: 480;
+    -fx-max-height: 60;
+}
+
+.submit-button {
+    -fx-background-radius: 50;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 250;
+    -fx-pref-height: 45;
+    -fx-min-width: 250;
+    -fx-min-height: 45;
+    -fx-max-width: 250;
+    -fx-max-height: 45;
+}
+.hyperlink {
+    -fx-underline: true;
+    -fx-border-style: none;
+    -fx-border-color: none;
+}
+
+.comment {
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+}
+
+.rounded {
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+}
+
+.roundedContent {
+    -fx-background-radius: 30px 0px 0px 30px;
+    -fx-border-radius: 30px 0px 0px 30px;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.tag {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #60A5FA;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-min-width: 40;
+    -fx-min-height: 20;
+    -fx-font-weight: 700;
+    -fx-font-size: 10px;
+}
+
+.grid-pane {
+    -fx-background: transparent;
+}
+
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, #E5E5E5, transparent, #E5E5E5;
+    -fx-background-radius: 0, 0, 0, 0;
+
+    -fx-box-border: none;
+    -fx-focus-color: -fx-control-inner-background;
+    -fx-faint-focus-color: -fx-control-inner-background;
+    -fx-text-box-border: -fx-control-inner-background;
+    -fx-border-width: -1;
+}
+
+.text-area .content {
+    -fx-background-color: transparent, #E5E5E5, transparent, #E5E5E5;
+}

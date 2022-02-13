@@ -1,0 +1,8 @@
+Hello Mr/Mrs. Mustermann,
+In the following you can see your Appointment informations and general informations
+Doctor: Dr med. Turkan Ayguel 
+Address: Gebeschusstr. 2
+Appointment Information: 2022-02-18 at 10:30
+Appointment Healthinformation: Hello Dr. Ayguel, 
+I have some problems with my cats hair. 
+My nose is swollen all day.General Healthinformation: Cat allergy 

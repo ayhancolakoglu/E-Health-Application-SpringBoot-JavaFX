@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fordsoft.tech.mydesk.controller.SignupUserController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9fcdf8" height="720.0" stroke="#9fcdf8" strokeType="INSIDE" width="342.0" />
+      <ImageView fitHeight="370.0" fitWidth="342.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@../images/erstesBild.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="221.0" fitWidth="472.0" layoutX="564.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="558.3180847167969" AnchorPane.leftAnchor="564.0" AnchorPane.rightAnchor="244.0" AnchorPane.topAnchor="28.0">
+         <image>
+            <Image url="@../images/createaccount.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="377.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="820.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/email.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="820.0" layoutY="387.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/password.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="375.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="375.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfusername" layoutX="419.0" layoutY="192.0" prefHeight="25.0" prefWidth="311.0" promptText="Username" snapToPixel="false" />
+      <TextField fx:id="tffirstname" layoutX="419.0" layoutY="260.0" prefHeight="25.0" prefWidth="311.0" promptText="Firstname" snapToPixel="false" />
+      <TextField fx:id="tflastname" layoutX="414.0" layoutY="328.0" prefHeight="25.0" prefWidth="311.0" promptText="Lastname" snapToPixel="false" />
+      <TextField fx:id="tfemail" layoutX="855.0" layoutY="328.0" prefHeight="25.0" prefWidth="311.0" promptText="Email" snapToPixel="false" />
+      <PasswordField fx:id="pfpassword" layoutX="856.0" layoutY="398.0" prefHeight="25.0" prefWidth="311.0" promptText="Password" snapToPixel="false" />
+      <Button fx:id="btnregister" layoutX="968.0" layoutY="551.0" mnemonicParsing="false" onAction="#onRegistration" text="Register">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="tfalreadyaccount" layoutX="913.0" layoutY="596.0" mnemonicParsing="false" onAction="#onLoginuser" text="I already have an account" />
+      <Label fx:id="lblPassword" layoutX="1033.0" layoutY="442.0" prefHeight="15.0" prefWidth="166.0" textFill="#ff0606" />
+      <Label fx:id="lblNotFilled" layoutX="830.0" layoutY="442.0" prefHeight="15.0" prefWidth="166.0" textFill="#ff0606" />
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="374.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="374.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="376.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfaddress" layoutX="418.0" layoutY="460.0" prefHeight="25.0" prefWidth="311.0" promptText="Address" snapToPixel="false" />
+      <TextField fx:id="tfcity" layoutX="413.0" layoutY="528.0" prefHeight="25.0" prefWidth="311.0" promptText="City" snapToPixel="false" />
+      <TextField fx:id="tfbirthday" layoutX="418.0" layoutY="392.0" prefHeight="25.0" prefWidth="311.0" promptText="Birthday(19.05.1998)" snapToPixel="false" />
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="377.0" layoutY="586.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfzip" layoutX="414.0" layoutY="597.0" prefHeight="25.0" prefWidth="311.0" promptText="ZIP" snapToPixel="false" />
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="814.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfinsurancename" layoutX="851.0" layoutY="192.0" prefHeight="25.0" prefWidth="311.0" promptText="Insurance Name" snapToPixel="false" />
+      <ImageView fitHeight="80.0" fitWidth="380.0" layoutX="817.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/textfield/name.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfinsurancetype" layoutX="854.0" layoutY="260.0" prefHeight="25.0" prefWidth="311.0" promptText="Insurance Type" snapToPixel="false" />
+      <Label fx:id="lbluserexists" layoutX="384.0" layoutY="154.0" prefHeight="15.0" prefWidth="166.0" textFill="#ff0606" />
+   </children>
+</AnchorPane>

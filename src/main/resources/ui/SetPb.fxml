@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fordsoft.tech.mydesk.controller.SetPbController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="434.0" layoutX="467.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/title.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="388.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="505.0" styleClass="bg-transparent" stylesheets="@../../../../../../Schreibtisch/campuas-master/src/css/color.css">
+         <children>
+            <ImageView fitHeight="586.0" fitWidth="523.0" layoutX="-18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/utils/settingsUtil2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btndefaultpb" layoutX="45.0" layoutY="74.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="defaultpb" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/profilePicture.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb1" layoutX="134.0" layoutY="75.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb1" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb2" layoutX="214.0" layoutY="76.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb3" layoutX="297.0" layoutY="76.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb3" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb4" layoutX="383.0" layoutY="77.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb4" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb4.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb5" layoutX="47.0" layoutY="161.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb5" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb5.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb6" layoutX="134.0" layoutY="162.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb6" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb6.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb7" layoutX="216.0" layoutY="162.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb7" fitHeight="60.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb7.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb8" layoutX="297.0" layoutY="161.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb8" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb8.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb9" layoutX="382.0" layoutY="163.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb9" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb9.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb10" layoutX="47.0" layoutY="247.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb10" fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb10.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb11" layoutX="133.0" layoutY="249.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb11" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb11.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb12" layoutX="214.0" layoutY="248.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb12" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb12.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb13" layoutX="297.0" layoutY="248.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb13" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb13.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb14" layoutX="384.0" layoutY="251.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb14" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb14.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb15" layoutX="48.0" layoutY="334.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb15" fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb15.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb16" layoutX="133.0" layoutY="336.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb16" fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb16.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb17" layoutX="215.0" layoutY="335.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb17" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb17.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb18" layoutX="297.0" layoutY="334.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb18" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb18.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnpb19" layoutX="384.0" layoutY="335.0" mnemonicParsing="false" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fx:id="pb19" fitHeight="59.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/pb/pb19.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnsave" layoutX="214.0" layoutY="448.0" mnemonicParsing="false" onAction="#onSavePb" styleClass="bg-transparent" stylesheets="@../styles/color.css" />
+            <Text layoutX="41.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Set Profilpicture">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnback" layoutX="1.0" layoutY="18.0" mnemonicParsing="false" onAction="#onSettingsUser" styleClass="bg-transparent" stylesheets="@../styles/color.css">
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icon/arrowLeft.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

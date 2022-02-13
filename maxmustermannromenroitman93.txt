@@ -1,0 +1,7 @@
+Hello Mr/Mrs. Mustermann,
+In the following you can see your Appointment informations and general informations
+Doctor: Dr med. Romen Roitman
+Address:
+ Oeder Weg 2-4
+Appointment Information: 2022-02-18 at 11:00
+Appointment Healthinformation: Examine General Healthinformation: Cat allergy 
