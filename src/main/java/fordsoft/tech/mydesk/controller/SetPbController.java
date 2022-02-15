@@ -170,14 +170,10 @@ public class SetPbController implements Initializable {
     private Button btndefaultpb;
 
 
-    @FXML
-    void onSavePb(ActionEvent event) {
-
-        userService.update(FxApplication.currentuser);
-
-
-    }
-
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod navigates to the SettingsUserController class
+     */
     @FXML
     void onSettingsUser(ActionEvent event) {
 
@@ -185,6 +181,11 @@ public class SetPbController implements Initializable {
 
     }
 
+    /**
+     * @param url            Url
+     * @param resourceBundle Ressource Bundle
+     * @ControllerMethod this method set profile pictures with the setonAction method
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -209,8 +210,5 @@ public class SetPbController implements Initializable {
         btnpb18.setOnAction(event -> FxApplication.currentuser.setPbPath("/images/pb/pb18.png"));
         btnpb19.setOnAction(event -> FxApplication.currentuser.setPbPath("/images/pb/pb19.png"));
 
-
     }
-
-
 }

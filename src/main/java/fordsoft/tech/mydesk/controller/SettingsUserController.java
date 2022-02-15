@@ -81,6 +81,10 @@ public class SettingsUserController implements Initializable {
     private Button btneditpb;
 
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod This method is for save the user changes
+     */
     @FXML
     void saveChanges(ActionEvent event) {
         String address;
@@ -125,6 +129,10 @@ public class SettingsUserController implements Initializable {
     }
 
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod this method navigares to the DashboardUserController class
+     */
     @FXML
     void backToProfile(ActionEvent event) {
 
@@ -132,6 +140,10 @@ public class SettingsUserController implements Initializable {
 
     }
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod this method navigates to the SetPbController class
+     */
     @FXML
     void editProfilePicture(ActionEvent event) {
 
@@ -139,6 +151,11 @@ public class SettingsUserController implements Initializable {
 
     }
 
+    /**
+     * @param url            Url
+     * @param resourceBundle RessourceBundle
+     * @ControllerMethod this method initialize the scene and execute some methods
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

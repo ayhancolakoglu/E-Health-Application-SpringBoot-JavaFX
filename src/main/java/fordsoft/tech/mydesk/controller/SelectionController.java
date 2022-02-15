@@ -34,19 +34,26 @@ public class SelectionController implements Initializable {
     @FXML
     private Button user;
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod navigates to LoginUserController class
+     */
     @FXML
     void onLoginuser(ActionEvent event) {
         router.navigate(LoginUserController.class, event);
 
     }
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod navigates to the AdminPasswordPageController class
+     */
     @FXML
     void onAdmin(ActionEvent event) {
 
         router.navigate(AdminPasswordPageController.class, event);
 
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

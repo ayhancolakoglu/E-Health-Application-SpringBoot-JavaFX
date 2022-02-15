@@ -107,53 +107,11 @@ public class FamilyDoctorPageController implements Initializable {
     private Label lblappointment;
 
 
-
-
-    /*
-    void timerOneWeek(){
-
-        Timer timer = new Timer();
-
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-
-            }
-        };
-
-        Calendar date = Calendar.getInstance();
-
-        java.sql.Date Date = java.sql.Date.valueOf(appointmentdate.getValue());
-        java.util.Date pickedDate = convertFromSQLDateToJAVADate(Date);
-
-        int day = pickedDate.getDay();
-        int month = pickedDate.getMonth();
-        int year = pickedDate.getYear();
-
-
-        day = day -7;
-        date.set(Calendar.YEAR,year);
-        date.set(Calendar.MONTH,month);
-        date.set(Calendar.DAY_OF_MONTH,day);
-        date.set(Calendar.HOUR_OF_DAY, 9);
-        date.set(Calendar.MINUTE, 30);
-    }
-
-
-
-    public static java.util.Date convertFromSQLDateToJAVADate(
-            java.sql.Date sqlDate) {
-        java.util.Date javaDate = null;
-        if (sqlDate != null) {
-            javaDate = new Date(sqlDate.getTime());
-        }
-        return javaDate;
-    }
-
-
-
+    /**
+     * This method load doctor details.
+     * At first it adds all doctors with the current medicalfield and set it to the table.
+     * After that it fills the choice box with the doctors lastnames.
      */
-
     void loadDoctorDetails() {
 
         doctorList.addAll(doctorService.findByMedicalField("Family Doctor"));
@@ -170,6 +128,10 @@ public class FamilyDoctorPageController implements Initializable {
 
     }
 
+
+    /**
+     * Here we set Column properties that the table in the scene can find the matching columns in the database table
+     */
     private void setColumnProperties() {
         colMedicalField.setCellValueFactory(new PropertyValueFactory<>("medicalField"));
         colDoctor.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getTitle() + ". " + celldata.getValue().getFirstname() + " " + celldata.getValue().getLastname()));
@@ -180,12 +142,20 @@ public class FamilyDoctorPageController implements Initializable {
     }
 
 
+    /**
+     * @param event
+     * @ControllerMethod this method navigates to the DashboardUserController class
+     */
     @FXML
     void onDashboardUser(ActionEvent event) {
         router.navigate(DashboardUserController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod this method saves an appointment
+     */
     @FXML
     void onSaveAppointment(ActionEvent event) {
 
@@ -201,9 +171,16 @@ public class FamilyDoctorPageController implements Initializable {
         appointment.setDate(date.getValue().toString());
 
 
+        /**
+         * if an appointment not exists with the given information it saves a new appointment with the given information
+         */
         if (appointmentService.appointmentExists(appointment.getDate(), appointment.getTime(), appointment.getDoctor().getLastname(), appointment.getDoctor().getMedicalField())) {
 
             appointmentService.save(appointment);
+
+            /**
+             * Here we create a file with a unique filename. After that the created file will be written with the given information.
+             */
             try {
                 String filename = appointment.getUser().getUsername() + appointment.getDoctor().getUsername() + appointment.getId() + ".txt";
                 FileWriter healthinfo = new FileWriter(filename);
@@ -222,10 +199,16 @@ public class FamilyDoctorPageController implements Initializable {
                 String filestringname = appointment.getUser().getUsername() + appointment.getDoctor().getUsername() + appointment.getId() + ".txt";
                 System.out.println(abpath + filestringname);
 
+                /**
+                 * An email with the txt file will be sent to the user email
+                 */
                 emailSenderService.sendMailwithAttachment(FxApplication.currentuser.getEmail(), "Appointment Information", "Informations are in the txt file", abpath + filestringname);
                 lblappointment.setText("Appointment is saved");
 
 
+                /**
+                 * An email with a simple message will be sent to the user email
+                 */
                 emailSenderService.sendSimpleMessage(
                         FxApplication.currentuser.getEmail(),
                         "Appointment " + appointment.getDate() + " at " + appointment.getTime(),
@@ -244,6 +227,9 @@ public class FamilyDoctorPageController implements Initializable {
 
     }
 
+    /**
+     * this method fills the choicebox reminder with strings
+     */
     void loadReminder() {
         String tenminutes = "10 minutes";
         String onehour = "1 Hour";
@@ -257,6 +243,9 @@ public class FamilyDoctorPageController implements Initializable {
     }
 
 
+    /**
+     * this methodfills the choicebox time with given times
+     */
     void loadTimes() {
 
         String a = "9:00";
@@ -281,6 +270,11 @@ public class FamilyDoctorPageController implements Initializable {
 
     }
 
+    /**
+     * @param url
+     * @param resourceBundle
+     * @ControllerMethod this method initialize the scene and execute some methods
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         stage = new Stage();

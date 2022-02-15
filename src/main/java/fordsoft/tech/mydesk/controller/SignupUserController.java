@@ -84,11 +84,19 @@ public class SignupUserController implements Initializable {
 
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod this method navigates to the LoginUserController class
+     */
     @FXML
     void onLoginuser(ActionEvent event) {
         router.navigate(LoginUserController.class, event);
     }
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod this method is for the registration
+     */
     @FXML
     void onRegistration(ActionEvent event) throws IOException {
         String username;
@@ -103,7 +111,7 @@ public class SignupUserController implements Initializable {
         String email;
         String password;
 
-        //Check if any of the text field is empty
+
         ArrayList<TextField> tfList = new ArrayList<>();
         tfList.add(tfusername);
         tfList.add(tffirstname);
@@ -135,6 +143,9 @@ public class SignupUserController implements Initializable {
         password = pfpassword.getText();
 
 
+        /**
+         * if a user is valid the user will be saved and will get an email to his email
+         */
         if (validate()) {
             FxApplication.currentuser.setUsername(username);
             FxApplication.currentuser.setFirstname(firstname);
@@ -150,8 +161,6 @@ public class SignupUserController implements Initializable {
             FxApplication.currentuser.setPbPath("/images/pb/profilePicture.png");
 
 
-            //FxApplication.currentuser.setPbPath("/images/pb/profilePicture");
-
             userService.save(FxApplication.currentuser);
             router.navigate(LoginUserController.class, event);
             emailSenderService.sendSimpleMessage(email, "E-health FFM Sign Up", "Hey " + FxApplication.currentuser.getFirstname() + " you are now part of the E-health FFM Community");
@@ -159,6 +168,11 @@ public class SignupUserController implements Initializable {
     }
 
 
+    /**
+     * @return this method returns a boolean, if a username already exists it will be false
+     * if the password length is <8 it will be false, and if any field is empfy it will be false
+     * if every condition asre valid it will be true .
+     */
     public boolean validate() {
 
         boolean valid = true;

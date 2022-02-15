@@ -58,17 +58,30 @@ public class LoginUserController implements Initializable {
     private Label lbllogin;
     private Stage stage;
 
+    /**
+     * @param event
+     * @ControllerMethod This method navigates to the SelectionController class
+     */
     @FXML
     void onSelection(ActionEvent event) {
         router.navigate(SelectionController.class, event);
     }
 
+    /**
+     * @param event
+     * @ControllerMethod This method navigates to the SignupUserController class
+     */
     @FXML
     void onSignup(ActionEvent event) {
 
         router.navigate(SignupUserController.class, event);
     }
 
+    /**
+     * @param event ActionEvent
+     * @ControllerMethod This method navigates after a correct
+     * authentication to the DashboardUserController class
+     */
     @FXML
     private void login(ActionEvent event) throws IOException {
 
@@ -83,13 +96,20 @@ public class LoginUserController implements Initializable {
 
     }
 
+    /**
+     * @return pfpassword text
+     */
     public String getPassword() {
         return pfpassword.getText();
     }
 
+    /**
+     * @return tfusername text
+     */
     public String getUsername() {
         return tfusername.getText();
     }
+
 
     public void initialize(URL location, ResourceBundle resources) {
         this.stage = new Stage();
