@@ -24,6 +24,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
 @Component
 @FxmlView("/ui/AdminPage.fxml")
 public class AdminPageController implements Initializable {
@@ -102,6 +106,11 @@ public class AdminPageController implements Initializable {
     @FXML
     private Button btnLogout;
 
+
+    /**
+     * @param event
+     * @ControllerMethod this method delete  a list of selected users.
+     */
     @FXML
     void deleteUsers(ActionEvent event) {
 
@@ -119,6 +128,10 @@ public class AdminPageController implements Initializable {
     }
 
 
+    /**
+     * @param event
+     * @ControllerMethod This method navigates to the SelectionController class
+     */
     @FXML
     void onLogout(ActionEvent event) {
 
@@ -126,12 +139,20 @@ public class AdminPageController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod this method shutdown the application
+     */
     @FXML
     void onExit(ActionEvent event) {
         Platform.exit();
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod this method reloads the text-fields with user information of a given id
+     */
     @FXML
     public void onReload(ActionEvent event) {
 
@@ -171,6 +192,10 @@ public class AdminPageController implements Initializable {
     }
 
 
+    /**
+     * @param event
+     * @ControllerMethod this method updates a user if a id  >0 is selected if the id is 0 it creates a new user
+     */
     @FXML
     private void onSaveUser(ActionEvent event) {
 
@@ -224,15 +249,25 @@ public class AdminPageController implements Initializable {
     }
 
 
+    /**
+     * @return the text of the passwordfield
+     */
     public String getPassword() {
         return password.getText();
     }
 
+    /**
+     * @return the username of the username text-field
+     */
     public String getUsername() {
         return username.getText();
     }
 
 
+    /**
+     * @param event
+     * @ControllerMethod This method delete selected users, and opens a pop-up window that asks for deleting user
+     */
     @FXML
     private void onDeleteUser(ActionEvent event) {
         List<User> users = userTable.getSelectionModel().getSelectedItems();
@@ -248,9 +283,10 @@ public class AdminPageController implements Initializable {
         loadUserDetails();
     }
 
+    /**
+     * @ControllerMethod this methods clear the text-fields
+     */
     private void clearFields() {
-
-        // userid.setText(null);
         username.clear();
         firstname.clear();
         lastname.clear();
@@ -264,6 +300,10 @@ public class AdminPageController implements Initializable {
         password.clear();
     }
 
+    /**
+     * @param user
+     * @ControllerMethod this method gives a pop-up window with information that the user is saved successfully
+     */
     private void saveAlert(User user) {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -273,6 +313,10 @@ public class AdminPageController implements Initializable {
         alert.showAndWait();
     }
 
+    /**
+     * @param user
+     * @ControllerMethod this method gives a pup-up windows with update information
+     */
     private void updateAlert(User user) {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -282,6 +326,12 @@ public class AdminPageController implements Initializable {
         alert.showAndWait();
     }
 
+
+    /**
+     * @param url
+     * @param resourceBundle
+     * @ControllerMethod This method initialize the scene
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -293,6 +343,9 @@ public class AdminPageController implements Initializable {
     }
 
 
+    /**
+     * Here we set Column properties that the table in the scene can find the matching columns in the database table
+     */
     private void setColumnProperties() {
         colUserId.setCellValueFactory(new PropertyValueFactory<>("id"));
 
@@ -310,6 +363,11 @@ public class AdminPageController implements Initializable {
 
     }
 
+    /**
+     * the list got cleared and after that all users got added to a list.
+     * Then all items in the user list included to the table
+     * For the userid choice box we add all user ids in a for loop
+     */
     private void loadUserDetails() {
         userList.clear();
         userList.addAll(userService.findAll());

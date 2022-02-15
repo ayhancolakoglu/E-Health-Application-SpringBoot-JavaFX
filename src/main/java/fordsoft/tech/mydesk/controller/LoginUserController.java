@@ -22,6 +22,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
 
 @Component
 @FxmlView("/ui/LoginUser.fxml")
@@ -52,11 +56,11 @@ public class LoginUserController implements Initializable {
 
     @FXML
     private Label lbllogin;
-
+    private Stage stage;
 
     @FXML
-    void onSelection(ActionEvent event){
-        router.navigate(SelectionController.class,event);
+    void onSelection(ActionEvent event) {
+        router.navigate(SelectionController.class, event);
     }
 
     @FXML
@@ -86,8 +90,6 @@ public class LoginUserController implements Initializable {
     public String getUsername() {
         return tfusername.getText();
     }
-
-    private Stage stage;
 
     public void initialize(URL location, ResourceBundle resources) {
         this.stage = new Stage();

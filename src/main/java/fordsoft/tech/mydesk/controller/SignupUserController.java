@@ -28,57 +28,47 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
+
 @Component
 @FxmlView("/ui/SignUpUser.fxml")
 public class SignupUserController implements Initializable {
 
 
+    public Button tfalreadyaccount;
     @Autowired
     Router router;
-
     Stage stage;
-
     @Autowired
     UserService userService;
-
     @FXML
     private TextField tfusername;
-
     @FXML
     private TextField tffirstname;
-
     @FXML
     private TextField tflastname;
-
     @FXML
     private TextField tfbirthday;
-
     @FXML
     private TextField tfaddress;
-
     @FXML
     private TextField tfcity;
-
     @FXML
     private TextField tfzip;
-
     @FXML
     private TextField tfinsurancename;
-
     @FXML
     private TextField tfinsurancetype;
-
     @FXML
     private TextField tfemail;
-
     @FXML
     private PasswordField pfpassword;
-
     @FXML
     private Button btnregister;
-
-    public Button tfalreadyaccount;
-
     @FXML
     private Label lblPassword;
 
@@ -169,7 +159,7 @@ public class SignupUserController implements Initializable {
     }
 
 
-    public boolean validate(){
+    public boolean validate() {
 
         boolean valid = true;
 
@@ -179,52 +169,44 @@ public class SignupUserController implements Initializable {
 
         //USERNAME CHECK
 
-        if(userService.userExists(tfusername.getText())) {
+        if (userService.userExists(tfusername.getText())) {
             lbluserexists.setText("Username already exists");
-            valid  = false;
+            valid = false;
         }
 
-        if(pfpassword.getText().length() < 8){
+        if (pfpassword.getText().length() < 8) {
             lblPassword.setText("Password is too short");
             valid = false;
         }
 
-         if(tfusername.getText().isEmpty()){
+        if (tfusername.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tffirstname.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tflastname.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tfbirthday.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tfaddress.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tfcity.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tfzip.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tfinsurancename.getText().isEmpty()) {
+            lblNotFilled.setText("Not all Data is filled");
+            valid = false;
+        } else if (tfinsurancetype.getText().isEmpty()) {
             lblNotFilled.setText("Not all Data is filled");
             valid = false;
         }
-        else if(tffirstname.getText().isEmpty()){
-            lblNotFilled.setText("Not all Data is filled");
-            valid = false;
-        }
-        else if(tflastname.getText().isEmpty()){
-            lblNotFilled.setText("Not all Data is filled");
-            valid = false;
-        }
-        else if(tfbirthday.getText().isEmpty()){
-            lblNotFilled.setText("Not all Data is filled");
-            valid = false;
-        }
-         else if(tfaddress.getText().isEmpty()){
-             lblNotFilled.setText("Not all Data is filled");
-             valid = false;
-         }
-         else if(tfcity.getText().isEmpty()){
-             lblNotFilled.setText("Not all Data is filled");
-             valid = false;
-         }
-         else if(tfzip.getText().isEmpty()){
-             lblNotFilled.setText("Not all Data is filled");
-             valid = false;
-         }
-         else if(tfinsurancename.getText().isEmpty()){
-             lblNotFilled.setText("Not all Data is filled");
-             valid = false;
-         }
-         else if(tfinsurancetype.getText().isEmpty()){
-             lblNotFilled.setText("Not all Data is filled");
-             valid = false;
-         }
 
         return valid;
     }

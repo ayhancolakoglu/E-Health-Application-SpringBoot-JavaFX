@@ -21,12 +21,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.Optional;
 import java.util.Properties;
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ * @Main This class includes the main methods init, start, stop etc.
+ */
+
+
 public class FxApplication extends Application {
 
-    private ConfigurableApplicationContext applicationContext;
 
     public static User currentuser = new User();
-    public static Doctor currentdoctor = new Doctor();
+    private ConfigurableApplicationContext applicationContext;
+
 
     @Override
     public void init() {
@@ -46,7 +52,6 @@ public class FxApplication extends Application {
 
 
     }
-
 
 
     @Override

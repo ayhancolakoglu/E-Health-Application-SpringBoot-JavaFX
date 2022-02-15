@@ -13,6 +13,11 @@ import org.springframework.stereotype.Component;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
 @Component
 @FxmlView("/ui/Selection.fxml")
 public class SelectionController implements Initializable {
@@ -36,16 +41,10 @@ public class SelectionController implements Initializable {
     }
 
     @FXML
-    void onAdmin(ActionEvent event){
+    void onAdmin(ActionEvent event) {
 
         router.navigate(AdminPasswordPageController.class, event);
 
-    }
-
-    //später noch umändern
-    @FXML
-    void onLoginDoctor(ActionEvent event){
-        router.navigate(LoginDoctorController.class, event);
     }
 
 

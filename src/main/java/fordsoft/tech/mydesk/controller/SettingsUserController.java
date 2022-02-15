@@ -26,11 +26,14 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
+
 @Component
 @FxmlView("/ui/SettingsUser.fxml")
 public class SettingsUserController implements Initializable {
-
-
 
 
     @Autowired
@@ -110,9 +113,6 @@ public class SettingsUserController implements Initializable {
         healthinformation = tagenhealthinfo.getText();
 
 
-
-
-
         FxApplication.currentuser.setAddress(address);
         FxApplication.currentuser.setCity(city);
         FxApplication.currentuser.setZip(zip);
@@ -125,12 +125,7 @@ public class SettingsUserController implements Initializable {
     }
 
 
-
-
-
-
-
-@FXML
+    @FXML
     void backToProfile(ActionEvent event) {
 
         router.navigate(DashboardUserController.class, event);

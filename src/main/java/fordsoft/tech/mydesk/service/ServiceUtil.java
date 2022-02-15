@@ -8,6 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+
+/**
+ * @author Bayram Ayhan Colakoglu
+ * @Lombok : @Data implements setters and getters
+ */
+
+
 @Component
 @Data
 public class ServiceUtil {

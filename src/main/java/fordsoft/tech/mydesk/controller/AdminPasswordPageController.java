@@ -25,6 +25,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
 @Component
 @FxmlView("/ui/AdminPasswordPage.fxml")
 public class AdminPasswordPageController implements Initializable {
@@ -42,6 +46,12 @@ public class AdminPasswordPageController implements Initializable {
     private Label lblwarning;
 
 
+    /**
+     * @param event
+     * @ControllerMethod If the admin password is correct it navigates to the AdminPageController class
+     * If not it shows a label with a warning message,
+     * additional it sends an email to the admin email
+     */
     @FXML
     void onAdminPage(ActionEvent event) {
 

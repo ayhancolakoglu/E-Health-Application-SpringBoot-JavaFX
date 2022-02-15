@@ -27,6 +27,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * @author Susann Salmey
+ */
+
 @Component
 @FxmlView("/ui/OphthalmologistPage.fxml")
 public class OphthalmologistPageController implements Initializable {
@@ -34,7 +39,7 @@ public class OphthalmologistPageController implements Initializable {
     private final ObservableList<Appointment> appointmentList = FXCollections.observableArrayList();
     private final ObservableList<Doctor> doctorList = FXCollections.observableArrayList();
 
-    private final ObservableList<String> reminderlist =  FXCollections.observableArrayList();
+    private final ObservableList<String> reminderlist = FXCollections.observableArrayList();
     private final ObservableList<String> timelist = FXCollections.observableArrayList();
 
 
@@ -51,7 +56,6 @@ public class OphthalmologistPageController implements Initializable {
 
     @Autowired
     EmailSenderService emailSenderService;
-
 
 
     @FXML
@@ -150,7 +154,7 @@ public class OphthalmologistPageController implements Initializable {
 
      */
 
-    void loadDoctorDetails(){
+    void loadDoctorDetails() {
 
         doctorList.addAll(doctorService.findByMedicalField("Ophthalmologist"));
         doctorTable.setItems(doctorList);
@@ -159,15 +163,16 @@ public class OphthalmologistPageController implements Initializable {
         boxDoctor.getItems().clear();
         doctorList.clear();
         doctorList.addAll(doctorService.findByMedicalField("Ophthalmologist"));
-        for(int z = 0; z < doctorList.size(); z++){
-            boxDoctor.getItems().addAll(doctorList.get(z).getLastname());}
+        for (int z = 0; z < doctorList.size(); z++) {
+            boxDoctor.getItems().addAll(doctorList.get(z).getLastname());
+        }
 
 
     }
 
-    private void setColumnProperties(){
+    private void setColumnProperties() {
         colMedicalField.setCellValueFactory(new PropertyValueFactory<>("medicalField"));
-        colDoctor.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getTitle() +". " + celldata.getValue().getFirstname() + " " + celldata.getValue().getLastname()));
+        colDoctor.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getTitle() + ". " + celldata.getValue().getFirstname() + " " + celldata.getValue().getLastname()));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colZIP.setCellValueFactory(new PropertyValueFactory<>("zip"));
         colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
@@ -175,9 +180,8 @@ public class OphthalmologistPageController implements Initializable {
     }
 
 
-
     @FXML
-    void onDashboardUser(ActionEvent event){
+    void onDashboardUser(ActionEvent event) {
         router.navigate(DashboardUserController.class, event);
 
     }
@@ -197,7 +201,7 @@ public class OphthalmologistPageController implements Initializable {
         appointment.setDate(date.getValue().toString());
 
 
-        if(appointmentService.appointmentExists( appointment.getDate(), appointment.getTime(), appointment.getDoctor().getLastname(),appointment.getDoctor().getMedicalField())) {
+        if (appointmentService.appointmentExists(appointment.getDate(), appointment.getTime(), appointment.getDoctor().getLastname(), appointment.getDoctor().getMedicalField())) {
 
             appointmentService.save(appointment);
             try {
@@ -213,7 +217,7 @@ public class OphthalmologistPageController implements Initializable {
                         "General Healthinformation: " + appointment.getUser().getHealthInformation() + " \n"
                 );
                 healthinfo.close();
-                String abpath = "/home/ayhan/Dokumente/main3/";
+                String abpath = "/home/ayhan/Dokumente/ehealth_g23/";
 
                 String filestringname = appointment.getUser().getUsername() + appointment.getDoctor().getUsername() + appointment.getId() + ".txt";
                 System.out.println(abpath + filestringname);
@@ -231,7 +235,6 @@ public class OphthalmologistPageController implements Initializable {
                                 + appointment.getDoctor().getZip() + " " + appointment.getDoctor().getCity() + "\n\n Please be 15 minutes before your Appointment there." + "\n Best regards your E-Health FFM Team");
 
 
-
             } catch (IOException | MessagingException e) {
                 e.printStackTrace();
 
@@ -242,7 +245,7 @@ public class OphthalmologistPageController implements Initializable {
 
     }
 
-    void loadReminder(){
+    void loadReminder() {
 
         String tenminutes = "10 minutes";
         String onehour = "1 Hour";
@@ -251,12 +254,12 @@ public class OphthalmologistPageController implements Initializable {
 
         boxreminder.getItems().clear();
         reminderlist.clear();
-        reminderlist.addAll(tenminutes,onehour, threedays, oneweek);
+        reminderlist.addAll(tenminutes, onehour, threedays, oneweek);
         boxreminder.getItems().addAll(reminderlist);
     }
 
 
-    void loadTimes(){
+    void loadTimes() {
 
         String a = "9:00";
         String b = "9:30";
@@ -275,7 +278,7 @@ public class OphthalmologistPageController implements Initializable {
 
         boxtime.getItems().clear();
         timelist.clear();
-        timelist.addAll(a,b,c,d,e,f,g,h,i,j,k,l,m,n);
+        timelist.addAll(a, b, c, d, e, f, g, h, i, j, k, l, m, n);
         boxtime.getItems().addAll(timelist);
 
 

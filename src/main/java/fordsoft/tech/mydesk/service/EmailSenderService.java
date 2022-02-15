@@ -16,11 +16,23 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
 
+
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
+
 @Component
 public class EmailSenderService {
     @Autowired
     private JavaMailSender emailSender;
 
+
+    /**
+     * @param to
+     * @param subject
+     * @param text    This method is for senind simple messages as email.
+     */
     public void sendSimpleMessage(String to, String subject, String text) {
 
         SimpleMailMessage message = new SimpleMailMessage();
@@ -32,6 +44,14 @@ public class EmailSenderService {
         emailSender.send(message);
     }
 
+    /**
+     * @param to
+     * @param body
+     * @param subject
+     * @param attachment
+     * @throws MessagingException if there is any exception
+     *                            This class sends a message with attachment as email
+     */
     public void sendMailwithAttachment(String to, String body, String subject, String attachment) throws MessagingException {
         MimeMessage mimeMessage = emailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);

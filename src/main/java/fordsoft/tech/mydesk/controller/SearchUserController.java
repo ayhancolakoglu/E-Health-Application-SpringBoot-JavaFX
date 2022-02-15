@@ -27,6 +27,11 @@ import java.net.URL;
 import java.util.*;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
+
 @Component
 @FxmlView("/ui/SearchUser.fxml")
 public class SearchUserController implements Initializable {

@@ -30,6 +30,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+
+/**
+ * @author Susann Salmey
+ */
+
 @Component
 @FxmlView("/ui/DentalMedicarePage.fxml")
 public class DentalMedicarePageController implements Initializable {
@@ -107,13 +112,13 @@ public class DentalMedicarePageController implements Initializable {
 
     void loadDoctorDetails() {
 
-        doctorList.addAll(doctorService.findByMedicalField("Dental Medicare"));
+        doctorList.addAll(doctorService.findByMedicalField("Dental Medicar"));
         doctorTable.setItems(doctorList);
 
 
         boxDoctor.getItems().clear();
         doctorList.clear();
-        doctorList.addAll(doctorService.findByMedicalField("Dental Medicare"));
+        doctorList.addAll(doctorService.findByMedicalField("Dental Medicar"));
         for (int z = 0; z < doctorList.size(); z++) {
             boxDoctor.getItems().addAll(doctorList.get(z).getLastname());
         }
@@ -165,7 +170,7 @@ public class DentalMedicarePageController implements Initializable {
 
                 healthinfo.close();
 
-                String abpath = "/home/ayhan/Dokumente/main3/";
+                String abpath = "/home/ayhan/Dokumente/ehealth_g23/";
                 String filestringname = appointment.getUser().getUsername() + appointment.getDoctor().getUsername() + appointment.getId() + ".txt";
                 System.out.println(abpath + filestringname);
 

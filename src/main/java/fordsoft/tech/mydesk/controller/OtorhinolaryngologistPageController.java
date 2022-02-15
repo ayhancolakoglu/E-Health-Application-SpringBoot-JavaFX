@@ -27,6 +27,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+/**
+ * @author Susann Salmey
+ */
+
+
 @Component
 @FxmlView("/ui/OtorhinolaryngologistPage.fxml")
 public class OtorhinolaryngologistPageController implements Initializable {
@@ -217,7 +223,7 @@ public class OtorhinolaryngologistPageController implements Initializable {
                 healthinfo.close();
 
 
-                String abpath = "/home/ayhan/Dokumente/main3/";
+                String abpath = "/home/ayhan/Dokumente/ehealth_g23/";
 
                 String filestringname = appointment.getUser().getUsername() + "_" + appointment.getDoctor().getUsername() + "_" + appointment.getId() + ".txt";
                 System.out.println(abpath + filestringname);

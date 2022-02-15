@@ -21,11 +21,14 @@ import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
+
 @Component
 @FxmlView("/ui/SetPb.fxml")
 public class SetPbController implements Initializable {
-
-
 
 
     @Autowired
@@ -165,7 +168,6 @@ public class SetPbController implements Initializable {
 
     @FXML
     private Button btndefaultpb;
-
 
 
     @FXML

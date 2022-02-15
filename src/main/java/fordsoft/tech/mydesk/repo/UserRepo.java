@@ -6,12 +6,23 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
+
 public interface UserRepo extends JpaRepository<User, Long> {
 
-	Optional<User> findByUsername(String username);
-	User  findByUsernameAndPassword(String username, String password);
+    /**
+     * @param username
+     * @return optional user, find by username
+     */
+    Optional<User> findByUsername(String username);
 
-
-
-	//boolean existsById(Long id);
+    /**
+     * @param username
+     * @param password
+     * @return user , find by username and password
+     */
+    User findByUsernameAndPassword(String username, String password);
 }

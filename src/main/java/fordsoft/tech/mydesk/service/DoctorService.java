@@ -9,66 +9,57 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+/**
+ * @author Bayram Ayhan Colakoglu
+ * @Spring A Service Class takes or put data to a database
+ */
+
 @Service
 public class DoctorService {
     @Autowired
     private ServiceUtil serviceUtil;
 
+    /**
+     * @param entity
+     * @return this method saves a doctor in our doctors table
+     */
     public Doctor save(Doctor entity) {
         return serviceUtil.getDoctorRepo().save(entity);
     }
 
-    public Doctor update(Doctor entity) {
-        return serviceUtil.getDoctorRepo().save(entity);
-    }
 
-    public void delete(Doctor entity) {
-        serviceUtil.getDoctorRepo().delete(entity);
-    }
-
-    public void delete(Long id) {
-        serviceUtil.getDoctorRepo().deleteById(id);
-    }
-
+    /**
+     * @param id
+     * @return a doctor object that was find by the id
+     */
     public Optional<Doctor> find(Long id) {
         return serviceUtil.getDoctorRepo().findById(id);
     }
 
-    public List<Doctor> findAll() {
-        return serviceUtil.getDoctorRepo().findAll();
-    }
 
-    public boolean authenticate(String username, String password){
-        Optional<Doctor> doctor = this.findByUsername(username);
-        if(doctor.isEmpty()){
-            return false;
-        }else{
-            Doctor d = doctor.get();
-            if(password.equals(d.getPassword())) return true;
-            else return false;
-        }
-    }
-
-    public Optional<Doctor> findByUsername(String username) {
-        return serviceUtil.getDoctorRepo().findByUsername(username);
-    }
-
-    public  Doctor findByLastname(String lastname){
+    /**
+     * @param lastname
+     * @return a doctor object that was find by lastname
+     */
+    public Doctor findByLastname(String lastname) {
         return serviceUtil.getDoctorRepo().findByLastname(lastname);
     }
 
-    public Doctor  findByUsernameAndPassword(String username, String password){
-        return serviceUtil.getDoctorRepo().findByUsernameAndPassword(username, password);
-    }
 
-    public ArrayList<Doctor> findByMedicalFieldAndZip(String medicalField, String zip){
+    /**
+     * @param medicalField
+     * @param zip
+     * @return an arraylist of doctor objects that was find by medical field and zip
+     */
+    public ArrayList<Doctor> findByMedicalFieldAndZip(String medicalField, String zip) {
         return serviceUtil.getDoctorRepo().findByMedicalFieldAndZip(medicalField, zip);
     }
 
-    public void deleteInBatch(List<Doctor> doctors) {
-        serviceUtil.getDoctorRepo().deleteInBatch(doctors);
-    }
-
+    /**
+     * @param medicalfield
+     * @return an arraylist of doctors that was find by medicalfield
+     */
     public ArrayList<Doctor> findByMedicalField(String medicalfield) {
         return serviceUtil.getDoctorRepo().findByMedicalField(medicalfield);
     }

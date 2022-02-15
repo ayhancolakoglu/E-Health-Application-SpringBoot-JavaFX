@@ -30,6 +30,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
+/**
+ * @author Bayram Ayhan Colakoglu
+ */
+
 @Component
 @FxmlView("/ui/DashboardUser.fxml")
 public class DashboardUserController implements Initializable {
@@ -145,6 +149,10 @@ public class DashboardUserController implements Initializable {
     private Button btngynecologist;
 
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to DentalMedicarePageController class
+     */
     @FXML
     void onDentalmedicare(ActionEvent event) {
 
@@ -153,17 +161,30 @@ public class DashboardUserController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to FamilyDoctorController class
+     */
     @FXML
     void onFamilydoctor(ActionEvent event) {
         router.navigate(FamilyDoctorPageController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to PediatricianPageController class
+     */
     @FXML
     void onPediatrician(ActionEvent event) {
         router.navigate(PediatricianPageController.class, event);
 
     }
+
+    /**
+     * @param event
+     * @ControllerMethod navigates to OtorhinolaryngologistPageController class
+     */
 
     @FXML
     void onOtorhinolaryngologist(ActionEvent event) {
@@ -171,47 +192,81 @@ public class DashboardUserController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to OrthodontistPageController class
+     */
+
     @FXML
     void onOrthodontist(ActionEvent event) {
         router.navigate(OrthodontistPageController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to OphthalmologistPageController class
+     */
     @FXML
     void onOphthalmologist(ActionEvent event) {
         router.navigate(OphthalmologistPageController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to PsychotherapistPageController class
+     */
     @FXML
     void onPsychotherapist(ActionEvent event) {
         router.navigate(PsychotherapistPageController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to NeurologistPageController class
+     */
     @FXML
     void onNeurologist(ActionEvent event) {
         router.navigate(NeurologistPageController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to GynecologistPageController class
+     */
     @FXML
     void onGynecologist(ActionEvent event) {
         router.navigate(GynecologistPageController.class, event);
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to the LoginUserController class
+     */
     @FXML
     void onLogout(ActionEvent event) {
         router.navigate(LoginUserController.class, event);
     }
 
+    /**
+     * @param event
+     * @ControllerMethod navigates to the SearchUserController class
+     */
     @FXML
     void onSearchUser(ActionEvent event) {
         router.navigate(SearchUserController.class, event);
 
     }
 
+
+    /**
+     * @param event
+     * @ControllerMethod navigates to the SettingsUserController class
+     */
     @FXML
     void onSettings(ActionEvent event) {
         router.navigate(SettingsUserController.class, event);
@@ -219,6 +274,9 @@ public class DashboardUserController implements Initializable {
     }
 
 
+    /**
+     * Here we set Column properties that the table in the scene can find the matching columns in the database table
+     */
     private void setColumnProperties() {
         colMedicalField.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getDoctor().getMedicalField()));
         colDoctor.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getDoctor().getTitle() + ". " + celldata.getValue().getDoctor().getFirstname() + " " + celldata.getValue().getDoctor().getLastname()));
@@ -228,6 +286,11 @@ public class DashboardUserController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     * @ControllerMethod This method delete selected appointments, and opens a pop-up window that asks for deleting apoointment
+     * The user will get an email with information about the canceled appointment
+     */
     @FXML
     private void onDeleteAppointment(ActionEvent event) {
         List<Appointment> appointments = appointmentTable.getSelectionModel().getSelectedItems();
@@ -235,7 +298,7 @@ public class DashboardUserController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
         alert.setHeaderText(null);
-        alert.setContentText("Are you sure you want to delete selected?");
+        alert.setContentText("Are you sure you want to cancle the selected Appointment");
         Optional<ButtonType> action = alert.showAndWait();
 
         if (action.get() == ButtonType.OK) appointmentService.deleteInBatch(appointments);
@@ -247,6 +310,10 @@ public class DashboardUserController implements Initializable {
     }
 
 
+    /**
+     * This method load appintment details, at first it clear the table, then the list. After that it add All appointments from the current user
+     * And then set to the items to the table
+     */
     private void loadAppointmentDetails() {
         appointmentTable.getItems().clear();
         appointmentList.clear();
@@ -255,6 +322,12 @@ public class DashboardUserController implements Initializable {
 
     }
 
+
+    /**
+     * @param url
+     * @param resourceBundle
+     * @ControllerMethod This method initialize the scene with user information and user image
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
